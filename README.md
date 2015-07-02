@@ -1,2 +1,2 @@
-#Hierarchical State Machine
+#AVL Tree
 This is yet another implementation of avl tree. Please see doc for more details.
