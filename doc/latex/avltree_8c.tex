@@ -1,0 +1,499 @@
+\hypertarget{avltree_8c}{\section{avltree.\-c File Reference}
+\label{avltree_8c}\index{avltree.\-c@{avltree.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}avltree.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{avltree_8c_ae55835f058a8c27796a8244f794562fe}{avl\-\_\-rotate\-\_\-rr} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$$\ast$root, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em This performs an R\-R rotation on the tree at the give node. This is required when an unblanced node is right-\/heavy and the subtree to its right is right-\/heavy too (for example after a node was inserted into the right subtree's right subtree). \end{DoxyCompactList}\item 
+static void \hyperlink{avltree_8c_a9d353d49e9fb1dc8ff552b9134fa649e}{avl\-\_\-rotate\-\_\-ll} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$$\ast$root, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em This performs an L\-L rotation on the tree at the give node. \end{DoxyCompactList}\item 
+static void \hyperlink{avltree_8c_a97823fd39f182212d40a1a1ddb98eb6a}{avl\-\_\-rotate\-\_\-lr} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$$\ast$root, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em This performs an L\-R rotation on the tree at the give node. This is required when an unblanced node is left-\/heavy and the subtree to its left is right-\/heavy (for example after a node was inserted into the left subtree's right subtree). \end{DoxyCompactList}\item 
+static void \hyperlink{avltree_8c_a06d03a163934fd17e59886570e023d54}{avl\-\_\-rotate\-\_\-rl} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$$\ast$root, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\item 
+int \hyperlink{avltree_8c_a4beff5228911506e8a6165dfa28d8365}{avl\-\_\-get\-\_\-balance} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em get balance factor of a tree The balance factor of a tree is the height of left subtree minnus height of right subtree. If balance factor is -\/1, 0, or 1, then it is a balanced tree. If the balance factor at a node is $>$ 0 then the subtree at that node is left heavy. If it is $<$ 0 then it is right heavy. \end{DoxyCompactList}\item 
+\hyperlink{avltree_8h_a04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} \hyperlink{avltree_8c_a274975b4002192ac8da4da2e8c438f27}{avl\-\_\-is\-\_\-balanced} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em check if a node is banlanced. \end{DoxyCompactList}\item 
+void \hyperlink{avltree_8c_a57bcefe3c455b7d6402d40159efae6ba}{avl\-\_\-set\-\_\-height} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em calculate height of all nodes in a tree. \end{DoxyCompactList}\item 
+\hyperlink{avltree_8h_a04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} \hyperlink{avltree_8c_ad157f379803d08d3ff12c5f148568544}{avl\-\_\-do\-\_\-balancing} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em do balancing operation for a tree required. Balance the un-\/balanced tree at the given node by R\-R, L\-L, R\-L, L\-R rotation. \end{DoxyCompactList}\item 
+\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$ \hyperlink{avltree_8c_a3368ac631c942526119218c1f7afd3c2}{avl\-\_\-get\-\_\-max\-\_\-node} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em get maxmum node in a tree. \end{DoxyCompactList}\item 
+\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$ \hyperlink{avltree_8c_ab5d96dc4189497e112efa96e53b82185}{avl\-\_\-get\-\_\-min\-\_\-node} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em get mimmum node in a tree. \end{DoxyCompactList}\item 
+static \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$ \hyperlink{avltree_8c_aa8a7b6b231c1e49b047171545b2718fb}{\-\_\-\-\_\-avl\-\_\-find} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$root, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node, \hyperlink{avltree_8h_ad98134ca35db25505e6409d88cba13b1}{avl\-\_\-tree\-\_\-cmp\-\_\-fp} cmp)
+\begin{DoxyCompactList}\small\item\em genaral binary search tree procedure. \end{DoxyCompactList}\item 
+static \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$ \hyperlink{avltree_8c_a25cb4541cc0744b702a0f73c9e063c5e}{avl\-\_\-find} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em find a node in avl tree. \end{DoxyCompactList}\item 
+static \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$ \hyperlink{avltree_8c_adec25176063c0e4c04e5c6991e3298b1}{\-\_\-\-\_\-avl\-\_\-add} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$root, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$root\-\_\-parent, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node, \hyperlink{avltree_8h_ad98134ca35db25505e6409d88cba13b1}{avl\-\_\-tree\-\_\-cmp\-\_\-fp} cmp)
+\begin{DoxyCompactList}\small\item\em add a new node into tree root. \end{DoxyCompactList}\item 
+void \hyperlink{avltree_8c_a31e6542cc18ef69b0f886aff70f0eb3c}{avl\-\_\-add} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em add a node to the tree. \end{DoxyCompactList}\item 
+void \hyperlink{avltree_8c_abf74cc30b25c0fee759da78e9eb0abaa}{avl\-\_\-swap\-\_\-nodes} (\hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node1, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node2, \hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em swap positions of node1 and node2. Devide this into 3 cases\-: \end{DoxyCompactList}\item 
+void \hyperlink{avltree_8c_a065e915cc593ab824c5c74a23f78ee32}{avl\-\_\-del} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em delete a node from a tree. When deleting a node, we need to move a new node in the tree to the empty place, there are two candidates\-: the maximum node of its left subtree, or the minmum node of its right subtree. Here, the former is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:jinyang.hust@gmail.com}{\tt jinyang.\-hust@gmail.\-com}
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\hypertarget{avltree_8c_adec25176063c0e4c04e5c6991e3298b1}{\index{avltree.\-c@{avltree.\-c}!\-\_\-\-\_\-avl\-\_\-add@{\-\_\-\-\_\-avl\-\_\-add}}
+\index{\-\_\-\-\_\-avl\-\_\-add@{\-\_\-\-\_\-avl\-\_\-add}!avltree.c@{avltree.\-c}}
+\subsubsection[{\-\_\-\-\_\-avl\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf avl\-\_\-node\-\_\-t}$\ast$ \-\_\-\-\_\-avl\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{root, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{root\-\_\-parent, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node, }
+\item[{{\bf avl\-\_\-tree\-\_\-cmp\-\_\-fp}}]{cmp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_adec25176063c0e4c04e5c6991e3298b1}
+
+
+add a new node into tree root. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & the right place in which we add the new node. \\
+\hline
+{\em root\-\_\-parent} & parent of root. \\
+\hline
+{\em node} & new node to be added. \\
+\hline
+{\em cmp} & compare function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+avl\-\_\-node\-\_\-t 
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, and \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-add().
+
+\hypertarget{avltree_8c_aa8a7b6b231c1e49b047171545b2718fb}{\index{avltree.\-c@{avltree.\-c}!\-\_\-\-\_\-avl\-\_\-find@{\-\_\-\-\_\-avl\-\_\-find}}
+\index{\-\_\-\-\_\-avl\-\_\-find@{\-\_\-\-\_\-avl\-\_\-find}!avltree.c@{avltree.\-c}}
+\subsubsection[{\-\_\-\-\_\-avl\-\_\-find}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf avl\-\_\-node\-\_\-t}$\ast$ \-\_\-\-\_\-avl\-\_\-find (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{root, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node, }
+\item[{{\bf avl\-\_\-tree\-\_\-cmp\-\_\-fp}}]{cmp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_aa8a7b6b231c1e49b047171545b2718fb}
+
+
+genaral binary search tree procedure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & tree root \\
+\hline
+{\em node} & \\
+\hline
+{\em cmp} & compare function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+found node, or N\-U\-L\-L if not found. 
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::left, and \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-find().
+
+\hypertarget{avltree_8c_a31e6542cc18ef69b0f886aff70f0eb3c}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-add@{avl\-\_\-add}}
+\index{avl\-\_\-add@{avl\-\_\-add}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void avl\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_a31e6542cc18ef69b0f886aff70f0eb3c}
+
+
+add a node to the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & node to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no 
+\end{DoxyReturn}
+
+
+References \-\_\-\-\_\-avl\-\_\-add(), \-\_\-avl\-\_\-ops\-::avl\-\_\-cmp, avl\-\_\-do\-\_\-balancing(), avl\-\_\-is\-\_\-balanced(), \-\_\-avl\-\_\-tree\-::avl\-\_\-ops, avl\-\_\-set\-\_\-height(), \-\_\-avl\-\_\-node\-::parent, and \-\_\-avl\-\_\-tree\-::root.
+
+\hypertarget{avltree_8c_a065e915cc593ab824c5c74a23f78ee32}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-del@{avl\-\_\-del}}
+\index{avl\-\_\-del@{avl\-\_\-del}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-del}]{\setlength{\rightskip}{0pt plus 5cm}void avl\-\_\-del (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_a065e915cc593ab824c5c74a23f78ee32}
+
+
+delete a node from a tree. When deleting a node, we need to move a new node in the tree to the empty place, there are two candidates\-: the maximum node of its left subtree, or the minmum node of its right subtree. Here, the former is used. 
+
+When deleting a node, we need to move a new node in the tree to the empty place, there are two candidates\-: the maximum node of its left subtree, or the minmum node of its right subtree. Here, the former is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & \\
+\hline
+{\em node} & to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+References avl\-\_\-do\-\_\-balancing(), avl\-\_\-get\-\_\-max\-\_\-node(), avl\-\_\-is\-\_\-balanced(), avl\-\_\-set\-\_\-height(), avl\-\_\-swap\-\_\-nodes(), F\-A\-L\-S\-E, \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, \-\_\-avl\-\_\-node\-::right, and \-\_\-avl\-\_\-tree\-::root.
+
+\hypertarget{avltree_8c_ad157f379803d08d3ff12c5f148568544}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-do\-\_\-balancing@{avl\-\_\-do\-\_\-balancing}}
+\index{avl\-\_\-do\-\_\-balancing@{avl\-\_\-do\-\_\-balancing}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-do\-\_\-balancing}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool\-\_\-t} avl\-\_\-do\-\_\-balancing (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_ad157f379803d08d3ff12c5f148568544}
+
+
+do balancing operation for a tree required. Balance the un-\/balanced tree at the given node by R\-R, L\-L, R\-L, L\-R rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & avl tree \\
+\hline
+{\em node} & do balancing at the node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, \-\_\-avl\-\_\-node\-::right, \-\_\-avl\-\_\-tree\-::root, and T\-R\-U\-E.
+
+
+
+Referenced by avl\-\_\-add(), and avl\-\_\-del().
+
+\hypertarget{avltree_8c_a25cb4541cc0744b702a0f73c9e063c5e}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-find@{avl\-\_\-find}}
+\index{avl\-\_\-find@{avl\-\_\-find}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-find}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf avl\-\_\-node\-\_\-t}$\ast$ avl\-\_\-find (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_a25cb4541cc0744b702a0f73c9e063c5e}
+
+
+find a node in avl tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & avl tree to be searched. \\
+\hline
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the found node, or N\-U\-L\-L if not found. 
+\end{DoxyReturn}
+
+
+References \-\_\-\-\_\-avl\-\_\-find(), \-\_\-avl\-\_\-ops\-::avl\-\_\-cmp, \-\_\-avl\-\_\-tree\-::avl\-\_\-ops, and \-\_\-avl\-\_\-tree\-::root.
+
+\hypertarget{avltree_8c_a4beff5228911506e8a6165dfa28d8365}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-get\-\_\-balance@{avl\-\_\-get\-\_\-balance}}
+\index{avl\-\_\-get\-\_\-balance@{avl\-\_\-get\-\_\-balance}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-get\-\_\-balance}]{\setlength{\rightskip}{0pt plus 5cm}int avl\-\_\-get\-\_\-balance (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_a4beff5228911506e8a6165dfa28d8365}
+
+
+get balance factor of a tree The balance factor of a tree is the height of left subtree minnus height of right subtree. If balance factor is -\/1, 0, or 1, then it is a balanced tree. If the balance factor at a node is $>$ 0 then the subtree at that node is left heavy. If it is $<$ 0 then it is right heavy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+balance factor of a node. 
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::height, \-\_\-avl\-\_\-node\-::left, and \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-is\-\_\-balanced().
+
+\hypertarget{avltree_8c_a3368ac631c942526119218c1f7afd3c2}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-get\-\_\-max\-\_\-node@{avl\-\_\-get\-\_\-max\-\_\-node}}
+\index{avl\-\_\-get\-\_\-max\-\_\-node@{avl\-\_\-get\-\_\-max\-\_\-node}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-get\-\_\-max\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf avl\-\_\-node\-\_\-t}$\ast$ avl\-\_\-get\-\_\-max\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_a3368ac631c942526119218c1f7afd3c2}
+
+
+get maxmum node in a tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+avl\-\_\-node\-\_\-t 
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-del().
+
+\hypertarget{avltree_8c_ab5d96dc4189497e112efa96e53b82185}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-get\-\_\-min\-\_\-node@{avl\-\_\-get\-\_\-min\-\_\-node}}
+\index{avl\-\_\-get\-\_\-min\-\_\-node@{avl\-\_\-get\-\_\-min\-\_\-node}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-get\-\_\-min\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf avl\-\_\-node\-\_\-t}$\ast$ avl\-\_\-get\-\_\-min\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_ab5d96dc4189497e112efa96e53b82185}
+
+
+get mimmum node in a tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::left.
+
+\hypertarget{avltree_8c_a274975b4002192ac8da4da2e8c438f27}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-is\-\_\-balanced@{avl\-\_\-is\-\_\-balanced}}
+\index{avl\-\_\-is\-\_\-balanced@{avl\-\_\-is\-\_\-balanced}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-is\-\_\-balanced}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool\-\_\-t} avl\-\_\-is\-\_\-balanced (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_a274975b4002192ac8da4da2e8c438f27}
+
+
+check if a node is banlanced. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-R\-U\-E balanced F\-A\-L\-S\-E not balanced 
+\end{DoxyReturn}
+
+
+References avl\-\_\-get\-\_\-balance(), F\-A\-L\-S\-E, and T\-R\-U\-E.
+
+
+
+Referenced by avl\-\_\-add(), and avl\-\_\-del().
+
+\hypertarget{avltree_8c_a9d353d49e9fb1dc8ff552b9134fa649e}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-rotate\-\_\-ll@{avl\-\_\-rotate\-\_\-ll}}
+\index{avl\-\_\-rotate\-\_\-ll@{avl\-\_\-rotate\-\_\-ll}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-rotate\-\_\-ll}]{\setlength{\rightskip}{0pt plus 5cm}static void avl\-\_\-rotate\-\_\-ll (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$$\ast$}]{root, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_a9d353d49e9fb1dc8ff552b9134fa649e}
+
+
+This performs an L\-L rotation on the tree at the give node. 
+
+This is required when an unblanced node is left-\/heavy and the subtree to its left is left-\/heavy too (for example after a node was inserted into the left subtree's left subtree).
+
+An L\-L rotation goes clockwise -\/ it moves the left sub-\/node up to the root, and the root node down to the right.
+
+From\-: N To\-: L / \textbackslash{} / \textbackslash{} L R A N / \textbackslash{} / \textbackslash{} A$\ast$ B B R
+
+Where A is the deepest path to the bottom of the tree. 
+\begin{DoxyParams}{Parameters}
+{\em root} & pointer that points to node, i.\-e. node's parent's child (points to node). \\
+\hline
+{\em node} & unbalanced node. \\
+\hline
+\end{DoxyParams}
+
+
+References \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, and \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-rotate\-\_\-lr(), and avl\-\_\-rotate\-\_\-rl().
+
+\hypertarget{avltree_8c_a97823fd39f182212d40a1a1ddb98eb6a}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-rotate\-\_\-lr@{avl\-\_\-rotate\-\_\-lr}}
+\index{avl\-\_\-rotate\-\_\-lr@{avl\-\_\-rotate\-\_\-lr}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-rotate\-\_\-lr}]{\setlength{\rightskip}{0pt plus 5cm}static void avl\-\_\-rotate\-\_\-lr (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$$\ast$}]{root, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_a97823fd39f182212d40a1a1ddb98eb6a}
+
+
+This performs an L\-R rotation on the tree at the give node. This is required when an unblanced node is left-\/heavy and the subtree to its left is right-\/heavy (for example after a node was inserted into the left subtree's right subtree). 
+
+An L\-R rotation consists of an R\-R rotation on the left subtree followed by an L\-L rotation on the root.
+
+From\-: N To\-: N To\-: B / \textbackslash{} / \textbackslash{} / \textbackslash{} L R B R L N / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} A B L D A C D R / \textbackslash{} / \textbackslash{} C D A C 
+\begin{DoxyParams}{Parameters}
+{\em root} & pointer that points to node, i.\-e. node's parent's child (points to node). \\
+\hline
+{\em node} & unbalanced node. \\
+\hline
+\end{DoxyParams}
+
+
+References avl\-\_\-rotate\-\_\-ll(), avl\-\_\-rotate\-\_\-rr(), \-\_\-avl\-\_\-node\-::left, and \-\_\-avl\-\_\-node\-::right.
+
+\hypertarget{avltree_8c_a06d03a163934fd17e59886570e023d54}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-rotate\-\_\-rl@{avl\-\_\-rotate\-\_\-rl}}
+\index{avl\-\_\-rotate\-\_\-rl@{avl\-\_\-rotate\-\_\-rl}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-rotate\-\_\-rl}]{\setlength{\rightskip}{0pt plus 5cm}static void avl\-\_\-rotate\-\_\-rl (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$$\ast$}]{root, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_a06d03a163934fd17e59886570e023d54}
+This performs an R\-L rotation on the tree at the give node. This is required when an unblanced node is right-\/heavy and the subtree to its right is left-\/heavy (for example after a node was inserted into the right subtree's left subtree).
+
+An R\-L rotation consists of an L\-L rotation on the right subtree followed by an R\-R rotation on the root.
+
+From\-: N To\-: N To\-: A / \textbackslash{} / \textbackslash{} / \textbackslash{} L R L A N R / \textbackslash{} / \textbackslash{} / \textbackslash{} / \textbackslash{} A B C R L C D B / \textbackslash{} / \textbackslash{} C D D B 
+\begin{DoxyParams}{Parameters}
+{\em root} & pointer that points to node, i.\-e. node's parent's child (points to node). \\
+\hline
+{\em node} & unbalanced node. \\
+\hline
+\end{DoxyParams}
+
+
+References avl\-\_\-rotate\-\_\-ll(), avl\-\_\-rotate\-\_\-rr(), \-\_\-avl\-\_\-node\-::left, and \-\_\-avl\-\_\-node\-::right.
+
+\hypertarget{avltree_8c_ae55835f058a8c27796a8244f794562fe}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-rotate\-\_\-rr@{avl\-\_\-rotate\-\_\-rr}}
+\index{avl\-\_\-rotate\-\_\-rr@{avl\-\_\-rotate\-\_\-rr}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-rotate\-\_\-rr}]{\setlength{\rightskip}{0pt plus 5cm}static void avl\-\_\-rotate\-\_\-rr (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$$\ast$}]{root, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8c_ae55835f058a8c27796a8244f794562fe}
+
+
+This performs an R\-R rotation on the tree at the give node. This is required when an unblanced node is right-\/heavy and the subtree to its right is right-\/heavy too (for example after a node was inserted into the right subtree's right subtree). 
+
+An R\-R rotation goes anticlockwise -\/ it moves the right sub-\/node up to the root, and the root node down to the left.
+
+From\-: N To\-: R / \textbackslash{} / \textbackslash{} L R N B / \textbackslash{} / \textbackslash{} A B$\ast$ L A
+
+Where B is the deepest path to the bottom of the tree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & pointer that points to node, i.\-e. node's parent's child (points to node). \\
+\hline
+{\em node} & unbalanced node. \\
+\hline
+\end{DoxyParams}
+
+
+References \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, and \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-rotate\-\_\-lr(), and avl\-\_\-rotate\-\_\-rl().
+
+\hypertarget{avltree_8c_a57bcefe3c455b7d6402d40159efae6ba}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-set\-\_\-height@{avl\-\_\-set\-\_\-height}}
+\index{avl\-\_\-set\-\_\-height@{avl\-\_\-set\-\_\-height}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-set\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}void avl\-\_\-set\-\_\-height (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_a57bcefe3c455b7d6402d40159efae6ba}
+
+
+calculate height of all nodes in a tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no 
+\end{DoxyReturn}
+
+
+References \-\_\-avl\-\_\-node\-::height, \-\_\-avl\-\_\-node\-::left, and \-\_\-avl\-\_\-node\-::right.
+
+
+
+Referenced by avl\-\_\-add(), and avl\-\_\-del().
+
+\hypertarget{avltree_8c_abf74cc30b25c0fee759da78e9eb0abaa}{\index{avltree.\-c@{avltree.\-c}!avl\-\_\-swap\-\_\-nodes@{avl\-\_\-swap\-\_\-nodes}}
+\index{avl\-\_\-swap\-\_\-nodes@{avl\-\_\-swap\-\_\-nodes}!avltree.c@{avltree.\-c}}
+\subsubsection[{avl\-\_\-swap\-\_\-nodes}]{\setlength{\rightskip}{0pt plus 5cm}void avl\-\_\-swap\-\_\-nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node1, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node2, }
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree}
+\end{DoxyParamCaption}
+)}}\label{avltree_8c_abf74cc30b25c0fee759da78e9eb0abaa}
+
+
+swap positions of node1 and node2. Devide this into 3 cases\-: 
+
+
+\begin{DoxyEnumerate}
+\item node1 is root;
+\item node2 is root;
+\item Both node1 and node2 are not root. 
+\end{DoxyEnumerate}
+
+References F\-A\-L\-S\-E, \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, \-\_\-avl\-\_\-node\-::right, and \-\_\-avl\-\_\-tree\-::root.
+
+
+
+Referenced by avl\-\_\-del().
+

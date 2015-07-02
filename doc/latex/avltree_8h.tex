@@ -1,0 +1,167 @@
+\hypertarget{avltree_8h}{\section{avltree.\-h File Reference}
+\label{avltree_8h}\index{avltree.\-h@{avltree.\-h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__avl__node}{\-\_\-avl\-\_\-node}
+\begin{DoxyCompactList}\small\item\em avl node structure define \end{DoxyCompactList}\item 
+struct \hyperlink{struct__avl__ops}{\-\_\-avl\-\_\-ops}
+\begin{DoxyCompactList}\small\item\em callback function table tobe registered by users. \end{DoxyCompactList}\item 
+struct \hyperlink{struct__avl__tree}{\-\_\-avl\-\_\-tree}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__avl__node}{\-\_\-avl\-\_\-node} \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t}
+\begin{DoxyCompactList}\small\item\em avl node structure define \end{DoxyCompactList}\item 
+typedef int($\ast$ \hyperlink{avltree_8h_ad98134ca35db25505e6409d88cba13b1}{avl\-\_\-tree\-\_\-cmp\-\_\-fp} )(const \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$a, const \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em prototype of user defined compare function. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__avl__ops}{\-\_\-avl\-\_\-ops} \hyperlink{avltree_8h_aa4f60c2d46e4517acbc40505f4101679}{avl\-\_\-ops\-\_\-t}
+\begin{DoxyCompactList}\small\item\em callback function table tobe registered by users. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{struct__avl__tree}{\-\_\-avl\-\_\-tree} \hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{avltree_8h_a04dd5074964518403bf944f2b240a5f8}{bool\-\_\-t} \{ \hyperlink{avltree_8h_a04dd5074964518403bf944f2b240a5f8aa1e095cc966dbecf6a0d8aad75348d1a}{F\-A\-L\-S\-E} = 0, 
+\hyperlink{avltree_8h_a04dd5074964518403bf944f2b240a5f8aa82764c3079aea4e60c80e45befbb839}{T\-R\-U\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$ \hyperlink{avltree_8h_a25cb4541cc0744b702a0f73c9e063c5e}{avl\-\_\-find} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em find a node in avl tree. \end{DoxyCompactList}\item 
+void \hyperlink{avltree_8h_a31e6542cc18ef69b0f886aff70f0eb3c}{avl\-\_\-add} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em add a node to the tree. \end{DoxyCompactList}\item 
+void \hyperlink{avltree_8h_a065e915cc593ab824c5c74a23f78ee32}{avl\-\_\-del} (\hyperlink{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{avl\-\_\-tree\-\_\-t} $\ast$tree, \hyperlink{avltree_8h_a5b416671ef04de3931de053f42a0013e}{avl\-\_\-node\-\_\-t} $\ast$node)
+\begin{DoxyCompactList}\small\item\em When deleting a node, we need to move a new node in the tree to the empty place, there are two candidates\-: the maximum node of its left subtree, or the minmum node of its right subtree. Here, the former is used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+\href{mailto:jinyang.hust@gmail.com}{\tt jinyang.\-hust@gmail.\-com}
+\end{DoxyAuthor}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{avltree_8h_a5b416671ef04de3931de053f42a0013e}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-node\-\_\-t@{avl\-\_\-node\-\_\-t}}
+\index{avl\-\_\-node\-\_\-t@{avl\-\_\-node\-\_\-t}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-node\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-avl\-\_\-node}  {\bf avl\-\_\-node\-\_\-t}}}\label{avltree_8h_a5b416671ef04de3931de053f42a0013e}
+
+
+avl node structure define 
+
+\hypertarget{avltree_8h_aa4f60c2d46e4517acbc40505f4101679}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-ops\-\_\-t@{avl\-\_\-ops\-\_\-t}}
+\index{avl\-\_\-ops\-\_\-t@{avl\-\_\-ops\-\_\-t}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-ops\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-avl\-\_\-ops}  {\bf avl\-\_\-ops\-\_\-t}}}\label{avltree_8h_aa4f60c2d46e4517acbc40505f4101679}
+
+
+callback function table tobe registered by users. 
+
+\hypertarget{avltree_8h_ad98134ca35db25505e6409d88cba13b1}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-tree\-\_\-cmp\-\_\-fp@{avl\-\_\-tree\-\_\-cmp\-\_\-fp}}
+\index{avl\-\_\-tree\-\_\-cmp\-\_\-fp@{avl\-\_\-tree\-\_\-cmp\-\_\-fp}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-tree\-\_\-cmp\-\_\-fp}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ avl\-\_\-tree\-\_\-cmp\-\_\-fp)(const {\bf avl\-\_\-node\-\_\-t} $\ast$a, const {\bf avl\-\_\-node\-\_\-t} $\ast$b)}}\label{avltree_8h_ad98134ca35db25505e6409d88cba13b1}
+
+
+prototype of user defined compare function. 
+
+\begin{DoxyReturn}{Returns}
+0\-: equal 1\-: a $>$ b -\/1\-: a $<$ b 
+\end{DoxyReturn}
+\hypertarget{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-tree\-\_\-t@{avl\-\_\-tree\-\_\-t}}
+\index{avl\-\_\-tree\-\_\-t@{avl\-\_\-tree\-\_\-t}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-tree\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-avl\-\_\-tree}  {\bf avl\-\_\-tree\-\_\-t}}}\label{avltree_8h_ad56a04ce76ca5b95b8ef4d935d0261ac}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{avltree_8h_a04dd5074964518403bf944f2b240a5f8}{\index{avltree.\-h@{avltree.\-h}!bool\-\_\-t@{bool\-\_\-t}}
+\index{bool\-\_\-t@{bool\-\_\-t}!avltree.h@{avltree.\-h}}
+\subsubsection[{bool\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf bool\-\_\-t}}}\label{avltree_8h_a04dd5074964518403bf944f2b240a5f8}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\-A\-L\-S\-E@{F\-A\-L\-S\-E}!avltree.\-h@{avltree.\-h}}\index{avltree.\-h@{avltree.\-h}!F\-A\-L\-S\-E@{F\-A\-L\-S\-E}}\item[{\em 
+\hypertarget{avltree_8h_a04dd5074964518403bf944f2b240a5f8aa1e095cc966dbecf6a0d8aad75348d1a}{F\-A\-L\-S\-E}\label{avltree_8h_a04dd5074964518403bf944f2b240a5f8aa1e095cc966dbecf6a0d8aad75348d1a}
+}]\index{T\-R\-U\-E@{T\-R\-U\-E}!avltree.\-h@{avltree.\-h}}\index{avltree.\-h@{avltree.\-h}!T\-R\-U\-E@{T\-R\-U\-E}}\item[{\em 
+\hypertarget{avltree_8h_a04dd5074964518403bf944f2b240a5f8aa82764c3079aea4e60c80e45befbb839}{T\-R\-U\-E}\label{avltree_8h_a04dd5074964518403bf944f2b240a5f8aa82764c3079aea4e60c80e45befbb839}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{avltree_8h_a31e6542cc18ef69b0f886aff70f0eb3c}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-add@{avl\-\_\-add}}
+\index{avl\-\_\-add@{avl\-\_\-add}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void avl\-\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8h_a31e6542cc18ef69b0f886aff70f0eb3c}
+
+
+add a node to the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & node to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no 
+\end{DoxyReturn}
+
+
+References \-\_\-\-\_\-avl\-\_\-add(), \-\_\-avl\-\_\-ops\-::avl\-\_\-cmp, avl\-\_\-do\-\_\-balancing(), avl\-\_\-is\-\_\-balanced(), \-\_\-avl\-\_\-tree\-::avl\-\_\-ops, avl\-\_\-set\-\_\-height(), \-\_\-avl\-\_\-node\-::parent, and \-\_\-avl\-\_\-tree\-::root.
+
+\hypertarget{avltree_8h_a065e915cc593ab824c5c74a23f78ee32}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-del@{avl\-\_\-del}}
+\index{avl\-\_\-del@{avl\-\_\-del}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-del}]{\setlength{\rightskip}{0pt plus 5cm}void avl\-\_\-del (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{avltree_8h_a065e915cc593ab824c5c74a23f78ee32}
+
+
+When deleting a node, we need to move a new node in the tree to the empty place, there are two candidates\-: the maximum node of its left subtree, or the minmum node of its right subtree. Here, the former is used. 
+
+When deleting a node, we need to move a new node in the tree to the empty place, there are two candidates\-: the maximum node of its left subtree, or the minmum node of its right subtree. Here, the former is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & \\
+\hline
+{\em node} & to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+References avl\-\_\-do\-\_\-balancing(), avl\-\_\-get\-\_\-max\-\_\-node(), avl\-\_\-is\-\_\-balanced(), avl\-\_\-set\-\_\-height(), avl\-\_\-swap\-\_\-nodes(), F\-A\-L\-S\-E, \-\_\-avl\-\_\-node\-::left, \-\_\-avl\-\_\-node\-::parent, \-\_\-avl\-\_\-node\-::right, and \-\_\-avl\-\_\-tree\-::root.
+
+\hypertarget{avltree_8h_a25cb4541cc0744b702a0f73c9e063c5e}{\index{avltree.\-h@{avltree.\-h}!avl\-\_\-find@{avl\-\_\-find}}
+\index{avl\-\_\-find@{avl\-\_\-find}!avltree.h@{avltree.\-h}}
+\subsubsection[{avl\-\_\-find}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf avl\-\_\-node\-\_\-t}$\ast$ avl\-\_\-find (
+\begin{DoxyParamCaption}
+\item[{{\bf avl\-\_\-tree\-\_\-t} $\ast$}]{tree, }
+\item[{{\bf avl\-\_\-node\-\_\-t} $\ast$}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{avltree_8h_a25cb4541cc0744b702a0f73c9e063c5e}
+
+
+find a node in avl tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & avl tree to be searched. \\
+\hline
+{\em node} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the found node, or N\-U\-L\-L if not found. 
+\end{DoxyReturn}
